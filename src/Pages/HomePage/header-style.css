@@ -8,5 +8,5 @@
 }
 
 .header-main{
-    @apply mt-36 px-8 flex flex-row w-full justify-center items-center
+    @apply mt-20 lg:mt-36  flex flex-col  w-full justify-center items-center lg:px-8 lg:flex-row
 }
