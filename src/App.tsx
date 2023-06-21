@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       {/* loader */}
-      <div id='loader' className='w-screen h-screen flex flex-row justify-center items-start'>
+      <div id='loader' className='w-screen h-screen flex flex-row justify-center items-center'>
         <img src={loader} alt="" />
       </div>
 

@@ -47,7 +47,7 @@ const Header = () => {
                 <div className='header-main '>
 
                     {/* text caption */}
-                    <div className='w-full lg:w-[60%] text-center mb-8 lg:mb-0'>
+                    <div className='w-full lg:w-[60%] text-center mb-8 lg:mb-0 lg:text-left'>
                         <h1 className='text-3xl lg:text-5xl capitalize'>Taking your productivity to maximum</h1>
                         <p className='text-md lg:text-2xl'>Focus more on creativity ,let's handle productivity  </p>
                     </div>
