@@ -1,0 +1,12 @@
+
+/* .container{
+@apply 
+} */
+
+.nav-head{
+    @apply flex flex-row  justify-between items-center px-4   
+}
+
+.header-main{
+    @apply mt-36 px-8 flex flex-row w-full justify-center items-center
+}

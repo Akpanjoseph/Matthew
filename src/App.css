@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "vollkorn-regular";
+  src: local('vollkorn-regular'),  url('./font/Vollkorn-Regular.ttf') format("truetype");
+}
+
+
+
+body{
+  font-family: 'vollkorn-regular';
+}
