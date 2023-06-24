@@ -8,11 +8,11 @@ const Home=()=>{
     return(
        <>
        <Header/>
-       {/* <Partners/> */}
         <Features/>
         <AboutUS/>
         <Review/>
         <Footer/>
+       {/* <Partners/> */}
         </>
     )
 }

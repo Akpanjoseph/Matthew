@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import './App.css'
 import Home from './Pages/HomePage/Home'
 import loader from './assert/loader.gif'
+import Login from './Pages/Accounts/LoginPage/Login'
 
 function App() {
 
@@ -26,7 +27,8 @@ function App() {
 
       {/* app body */}
       <div id='app-body' className='hidden'>
-        <Home />
+        {/* <Home /> */}
+        <Login/>
       </div>
     </>
   )
