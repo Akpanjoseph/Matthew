@@ -1,5 +1,6 @@
 
 import logo from '../../../assert/logo.png';
+// import chart1 from '../../../assert/Analytics-amico.svg';
 import chart1 from '../../../assert/chart1.png';
 import chart2 from '../../../assert/chart2.png';
 import '../header-style.css'
@@ -15,20 +16,21 @@ const Header = () => {
             <section className='nav-head'>
                 {/* logo */}
                 <div>
-                    <img src={logo} alt="" className='w-[70%]' />
+                    <img src={logo} alt="" className='w-[50%]' />
                 </div>
 
                 {/* links */}
-                <div className=' hidden  flex-row space-x-12 text-xl pt-10 lg:flex'>
-                    <p>Home</p>
-                    <p>About Us</p>
-                    <p>Features</p>
+                <div className=' hidden  flex-row space-x-10 text-lg pt-10 lg:flex'>
+                    <p className='hover:border-b-2 border-white'>Home</p>
+                    <p className='hover:border-b-2 border-white '>Docs</p>
+                    <p className='hover:border-b-2 border-white '>About Us</p>
+                    <p className='hover:border-b-2 border-white '>Features</p>
                 </div>
 
                 {/* account */}
-                <div className='hidden pt-10 text-xl lg:block'>
-                    <button className='px-4'>Log In</button>
-                    <button className='mx-2 px-6 py-2 rounded-md  bg-secondary  hover:bg-white hover:text-black'>Sign Up</button>
+                <div className='hidden pt-10 text-md lg:block'>
+                    <button className='px-4 hover:border-b-2 border-white'>Log In</button>
+                    <button className='mx-2 px-8 py-1 rounded-md  bg-secondary  hover:bg-white hover:text-black'>Sign Up</button>
                 </div>
 
 
@@ -62,7 +64,7 @@ const Header = () => {
 
                 {/* get started button */}
                 <div className='mt-20 text-center'>
-                    <button className=' bg-secondary w-[90%] py-2 text-xl  rounded-md font-bold hover:bg-white hover:text-dark lg:w-[40%] lg:py-4 lg:text-2xl '>Get Started  </button>
+                    <button className=' bg-secondary w-[90%] py-2 text-md  rounded-md font-bold hover:bg-white hover:text-dark lg:w-[40%] lg:py-2 lg:text-2xl '>Get Started  </button>
 
                 </div>
             </section>
