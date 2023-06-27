@@ -1,13 +1,24 @@
-import { useState } from "react"
+import {useFormik} from 'formik'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleLeft, faArrowCircleRight } from "@fortawesome/free-solid-svg-icons"
 import { faGoogle, faMicrosoft, faFacebookSquare, faApple } from "@fortawesome/free-brands-svg-icons";
+// import {userSignInSchema} from '../../../Schemas/index'
 
 const Signup = () => {
 
-    const [email, setEmail] = useState<string>('')
-    const [password, setPassword] = useState<string>('')
+    const {handleBlur,handleChange,values}= useFormik(
+        {
+            initialValues:{
+                email:"",
+                password: "",
+                comfirmPassword:""
+            },
+            onSubmit: function(){},
+            // validationSchema:userSignInSchema
+
+        }
+    )
 
     return (
         <div className="flex flex-col justify-center items-center w-full h-full  mt-10  md:s:w-screen md:h-screen ">
@@ -27,11 +38,18 @@ const Signup = () => {
                 <form action="">
 
                     <div className="border my-4  w-full rounded-md">
-                        <input type="email" placeholder="email" value={email} onChange={(text) => setEmail(text.target.value)} className="w-full py-4 lg:py-2 px-4 rounded-md" />
+                        <input type="email" placeholder="email" value={values.email}
+                         onChange={handleChange}
+                         onBlur={handleBlur}
+                          className="w-full py-4 lg:py-2 px-4 rounded-md" />
                     </div>
 
                     <div className="border my-4 w-full rounded-md ">
-                        <input type="password" placeholder="password" value={password} onChange={(text) => setPassword(text.target.value)} className="w-full py-4 lg:py-2 px-4 rounded-md" />
+                        <input type="password" placeholder="password" value={values.password} onChange={handleChange} onBlur={handleBlur} className="w-full py-4 lg:py-2 px-4 rounded-md" />
+
+                    </div>
+                    <div className="border my-4 w-full rounded-md ">
+                        <input type="password" placeholder="comfirm password" value={values.comfirmPassword} onChange={handleChange} onBlur={handleBlur} className="w-full py-4 lg:py-2 px-4 rounded-md" />
 
                     </div>
 

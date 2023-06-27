@@ -1,13 +1,24 @@
-import { useState } from "react"
+import { useFormik } from "formik";
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleRight, faArrowCircleLeft } from "@fortawesome/free-solid-svg-icons"
 import { faGoogle, faMicrosoft, faFacebookSquare, faApple } from "@fortawesome/free-brands-svg-icons";
+// import {userLoginSchema} from '../../../Schemas/index'
 
 const Login = () => {
 
-    const [password, setPassword] = useState<string>('')
-    const [email, setEmail] = useState<string>('')
+   
+       
+        const {handleChange,values,handleBlur} = useFormik<any>({
+            initialValues:{
+                email:"",
+                password: ""
+            },
+            onSubmit: function(){},
+            // validationSchema: userLoginSchema
+        })
+     console.log(values);
+     
 
     return (
         <div className="flex flex-col justify-center items-center w-full h-full  mt-10  md:s:w-screen md:h-screen ">
@@ -24,19 +35,27 @@ const Login = () => {
 
 
             <div className="shadow-sm  w-full p-2 lg:p-4 lg:w-[40%] lg:shadow-xl">
-                <form action="">
+                <form action="" >
                     <div className="border my-4  w-full rounded-md">
-                        <input type="text" placeholder="Email" value={email} onChange={(text) => setEmail(text.target.value)} className="w-full py-4 lg:py-2 px-4 rounded-md" />
+                        <input type="text" 
+                        id="email" placeholder="Email"  
+                        value={values.email} onChange={handleChange} 
+                        onBlur={handleBlur}
+                        className="w-full py-4 lg:py-2 px-4 rounded-md" />
                     </div>
 
                     <div className="border my-4 w-full rounded-md ">
-                        <input type="Password" placeholder="password" value={password} onChange={(text) => setPassword(text.target.value)} className="w-full py-4 lg:py-2 px-4 rounded-md" />
+                        <input id="password"
+                         type="Password" placeholder="password" value={values.password} 
+                         onChange={handleChange} 
+                         onBlur={handleBlur} 
+                         className="w-full py-4 lg:py-2 px-4 rounded-md" />
 
                     </div>
 
                     <div className="flex  items-center justify-center w-full  ">
                         <div className=" flex justify-center items-center rounded-md  bg-dark text-white py-2 w-[80%] lg:w-[70%]      space-x-3">
-                            <button type="submit" className="  ">Login
+                            <button type="submit" className="">Login
                             </button>
                             <FontAwesomeIcon icon={faArrowCircleRight} className="" />
                         </div>
