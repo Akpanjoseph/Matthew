@@ -1,12 +1,14 @@
+import { Link } from 'react-router-dom'
 
 import logo from '../../../assert/logo.png';
 // import chart1 from '../../../assert/Analytics-amico.svg';
 import chart1 from '../../../assert/chart1.png';
 import chart2 from '../../../assert/chart2.png';
-import '../header-style.css'
+
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from '@fortawesome/free-solid-svg-icons'
+
 
 
 const Header = () => {
@@ -16,21 +18,26 @@ const Header = () => {
             <section className='nav-head'>
                 {/* logo */}
                 <div>
-                    <img src={logo} alt="" className='w-[50%]' />
+                    <img src={logo} alt="" className='w-[200px]' />
                 </div>
 
                 {/* links */}
                 <div className=' hidden  flex-row space-x-10 text-lg pt-10 lg:flex'>
                     <p className='hover:border-b-2 border-white'>Home</p>
                     <p className='hover:border-b-2 border-white '>Docs</p>
-                    <p className='hover:border-b-2 border-white '>About Us</p>
-                    <p className='hover:border-b-2 border-white '>Features</p>
+
+
                 </div>
 
                 {/* account */}
                 <div className='hidden pt-10 text-md lg:block'>
-                    <button className='px-4 hover:border-b-2 border-white'>Log In</button>
-                    <button className='mx-2 px-8 py-1 rounded-md  bg-secondary  hover:bg-white hover:text-black'>Sign Up</button>
+                    <Link to={'/login'}>
+                        <button className='px-4 hover:border-b-2 border-white'>Log In</button>
+                    </Link>
+
+                    <Link to={'/signup'}>
+                        <button className='mx-2 px-8 py-1 rounded-md  bg-secondary  hover:bg-white hover:text-black'>Sign Up</button>
+                    </Link>
                 </div>
 
 
@@ -58,13 +65,15 @@ const Header = () => {
                     <div className='flex w-full justify-center items-center space-x-4 lg:w-[40%]  flex-row'>
                         <img src={chart1} alt="" className='w-[40%] lg:w-[50%]' />
                         <img src={chart2} alt="" className='w-[40%] lg:w-[50%]' />
-                       
+
                     </div>
                 </div>
 
                 {/* get started button */}
                 <div className='mt-20 text-center'>
-                    <button className=' bg-secondary w-[90%] py-2 text-md  rounded-md font-bold hover:bg-white hover:text-dark lg:w-[40%] lg:py-2 lg:text-2xl '>Get Started  </button>
+                    <Link to={'/login'}>
+                        <button className=' bg-secondary w-[90%] py-2 text-md  rounded-md font-bold hover:bg-white hover:text-dark lg:w-[40%] lg:py-2 lg:text-2xl '>Get Started  </button>
+                    </Link>
 
                 </div>
             </section>

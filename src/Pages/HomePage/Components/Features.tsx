@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom'
+
 import easy from '../../../assert/Coffee break.png'
 import focus from '../../../assert/Work time.gif'
 import report from '../../../assert/Annotation-amico.png'
@@ -68,7 +70,9 @@ const Features = () => {
 
             {/* get started button */}
             <div className='mt-20 text-center'>
+                <Link to={'/login'}>
                 <button className=' bg-secondary text-white w-[90%] py-2 text-xl  rounded-md font-bold border-dark hover:border-2 hover:bg-white hover:text-dark lg:w-[40%] lg:py-2 lg:text-2xl '>Get Started  </button>
+                </Link>
 
             </div>
         </main>

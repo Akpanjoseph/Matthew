@@ -23,7 +23,7 @@ body{
   }
   
   .nav-head{
-      @apply flex flex-row  justify-between items-center px-4   
+      @apply flex flex-row  justify-between w-full items-center px-4   
   }
   
   .header-main{

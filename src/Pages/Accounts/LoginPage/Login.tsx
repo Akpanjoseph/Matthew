@@ -1,7 +1,8 @@
 import { useState } from "react"
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleRight, faArrowCircleLeft } from "@fortawesome/free-solid-svg-icons"
-import { faGoogle, faMicrosoft , faFacebookSquare, faApple } from "@fortawesome/free-brands-svg-icons";
+import { faGoogle, faMicrosoft, faFacebookSquare, faApple } from "@fortawesome/free-brands-svg-icons";
 
 const Login = () => {
 
@@ -10,9 +11,13 @@ const Login = () => {
 
     return (
         <div className="flex flex-col justify-center items-center w-full h-full  mt-10  md:s:w-screen md:h-screen ">
+
             <div className="flex justify-start items-center w-full px-2 md:px-8 md:my-4 text-xl mb-10">
-                <FontAwesomeIcon icon={faArrowCircleLeft} className="text-4xl" /> <span>Back</span>
+                <Link to={'/'}>
+                    <FontAwesomeIcon icon={faArrowCircleLeft} className="text-4xl" /> <span>Back</span>
+                </Link>
             </div>
+
             <div>
                 <h1 className="title">Login</h1>
             </div>
@@ -72,7 +77,10 @@ const Login = () => {
             {/* sign in */}
             <div className=" flex flex-col justify-center items-center space-x-2 py-4 w-full md:flex-row">
                 <p className="text-xl underline">Don't have account ?</p>
-                <button className="bg-secondary text-white px-4 py-2 rounded-md">Create Account</button>
+
+                <Link to={'/signup'}>
+                    <button className="bg-secondary text-white px-4 py-2 rounded-md">Create Account</button>
+                </Link>
             </div>
         </div>
     )
