@@ -6,6 +6,7 @@ import Home from './Pages/HomePage/Home'
 import loader from './assert/loader.gif'
 import Login from './Pages/Accounts/LoginPage/Login'
 import Signup from './Pages/Accounts/SignupPage/Signup'
+import DashBoard from './Pages/DashBoard/DashBoard'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
             <Route index  element={<Home/>} />
             <Route path='/login' element={<Login/>} />
             <Route path='/signup' element={<Signup/>} />
+            <Route path='/dashboard' element={<DashBoard/>} />
         </Route>
       )
   )
