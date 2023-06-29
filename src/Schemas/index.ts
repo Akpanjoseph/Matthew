@@ -20,7 +20,6 @@ export const userSignInSchema = yup.object().shape({
     matches(passwordRules,{message:"Password must be a min of 6 characters with 1 uppercase and 1 number"})
     .required("Password can not be empty!"),
 
-    comfirmPassword: yup.string
-    .oneOf([yup.ref('password'),null],"Passwords must match")
-    .required("comfirm password can not be empty!")
+    confirmPassword: yup.string().oneOf([yup.ref("password")], "Passwords must match").required("Confirm password cannot be empty!")
+  
 })

@@ -1,5 +1,5 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faAdd,faBell,faBook,faChartColumn,faCog,faHome,faPerson} from '@fortawesome/free-solid-svg-icons'
+import {faAdd,faBell,faBook,faChartColumn,faCog,faHome} from '@fortawesome/free-solid-svg-icons'
 import logo from '../../assert/logo.png'
 const DashBoard = () => {
     return (
