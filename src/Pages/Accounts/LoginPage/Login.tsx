@@ -2,7 +2,7 @@ import { useFormik } from "formik";
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleRight, faArrowCircleLeft } from "@fortawesome/free-solid-svg-icons"
-import { faGoogle, faMicrosoft, faFacebookSquare, faApple } from "@fortawesome/free-brands-svg-icons";
+import { faGoogle, faWindows, faFacebookSquare, faApple } from "@fortawesome/free-brands-svg-icons";
 // import {userLoginSchema} from '../../../Schemas/index'
 const Login = () => {
 
@@ -78,7 +78,8 @@ const Login = () => {
 
                 {/* <hr /> */}
                 <div className="flex justify-center  w-full">
-                    <FontAwesomeIcon icon={faMicrosoft} size="3x" className="text-blue-500" />
+                    {/* <FontAwesomeIcon icon={faMicrosoft} size="3x" className="text-blue-500" /> */}
+                    <FontAwesomeIcon icon={faWindows} size="3x" style={{color: "#2d75f0",}} />
                     <p className="pt-4 px-4">Microsoft</p>
                 </div>
 

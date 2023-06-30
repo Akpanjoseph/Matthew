@@ -4,6 +4,7 @@ import logo from '../../../assert/logo.png';
 // import chart1 from '../../../assert/Analytics-amico.svg';
 import chart1 from '../../../assert/chart1.png';
 import chart2 from '../../../assert/chart2.png';
+// import teamSpirit from '../../../assert/Team spirit.gif'
 
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

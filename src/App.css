@@ -1,35 +1,33 @@
 @font-face {
   font-family: "vollkorn-regular";
-  src: local('vollkorn-regular'),  url('./font/Vollkorn-Regular.ttf') format("truetype");
+  src: local("vollkorn-regular"),
+    url("./font/Vollkorn-Regular.ttf") format("truetype");
 }
 
-
-
-body{
-  font-family: 'vollkorn-regular';
+body {
+  font-family: "vollkorn-regular";
 }
 
-
-.title{
-  @apply  capitalize  text-center w-[95%] text-3xl font-semibold lg:w-[60%] lg:text-4xl
+.title {
+  @apply capitalize  text-center w-[95%] text-3xl font-semibold lg:w-[60%] lg:text-4xl;
 }
 
-.container{
-  @apply my-20 lg:mt-40 lg:px-4
-  }
-  
-  .title{
-      @apply  capitalize  text-center w-[95%] text-3xl font-semibold lg:w-[60%] lg:text-4xl
-  }
-  
-  .nav-head{
-      @apply flex flex-row  justify-between w-full items-center px-4   
-  }
-  
-  .header-main{
-      @apply mt-20 lg:mt-36  flex flex-col  w-full justify-center items-center lg:px-8 lg:flex-row
-  }
-  
-  .head-container{
-      @apply flex flex-col justify-center items-center
-  }
+.container {
+  @apply my-20 lg:mt-40 lg:px-4;
+}
+
+.title {
+  @apply capitalize  text-center w-[95%] text-3xl font-semibold lg:w-[60%] lg:text-4xl;
+}
+
+.nav-head {
+  @apply flex flex-row  justify-between w-full items-center px-4;
+}
+
+.header-main {
+  @apply mt-20 lg:mt-36  flex flex-col  w-full justify-center items-center lg:px-8 lg:flex-row;
+}
+
+.head-container {
+  @apply flex flex-col justify-center items-center;
+}
