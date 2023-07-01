@@ -1,7 +1,7 @@
 
 const Projects = ()=>{
     return(
-        <div>
+        <div className="text-dark">
                 <p>Projects</p>
         </div>
     )

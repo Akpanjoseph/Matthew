@@ -10,7 +10,7 @@ const CreateProject = ()=>{
     return(
         <div className="flex flex-col h-full justify-center lg:items-center  w-full">
                 <div className="flex justify-center w-full px-8 lg:px-0" >
-                    <button className="flex flex-col justify-center items-center w-full  rounded-md bg-dark text-white py-2 text-sm shadow-md lg:text-xl lg:w-[40%]" onClick={}>
+                    <button className="flex flex-col justify-center items-center w-full  rounded-md bg-dark text-white py-2 text-sm shadow-md lg:text-xl lg:w-[40%]" >
                         <span>Create Project</span>
                         <FontAwesomeIcon icon={faAdd} size="lg" />
                     </button>
