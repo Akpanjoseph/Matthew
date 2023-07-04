@@ -61,12 +61,12 @@ const DashBoard = () => {
         </div>
 
 
-        <FontAwesomeIcon icon={faBars} size="lg"  className="mt-3"/>
+        <FontAwesomeIcon icon={faBars} size="lg"  className="mt-3 lg:hidden"/>
       </div>
 
       {/* main dash board section */}
       <div className="flex w-full h-full lg:space-x-4">
-        <section className="w-[10%] pt-4  rounded-sm hidden   justify-center h-screen border-r-2 border-gray-300 shadow-md  lg:flex">
+        <section className="w-[20%] pt-4  rounded-sm hidden   justify-center h-screen border-r-2 border-gray-300 shadow-md  lg:flex">
 
           <aside className="w-full flex flex-col text-center pt-40 px-2 space-y-10  ">
 
@@ -84,7 +84,7 @@ const DashBoard = () => {
 
 
 
-        <section className="w-full md:w-[80%] mt-[20%] lg:mt-[10%] text-dark">
+        <section className="w-full md:w-[70%]  text-dark">
          {display}
         </section>
 

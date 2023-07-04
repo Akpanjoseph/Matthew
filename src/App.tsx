@@ -34,7 +34,7 @@ function App() {
     <>
       {/* loader */}
       <div id='loader' className='w-screen h-screen flex flex-row justify-center items-center'>
-        <img src={loader} alt="" className='w-[30%]' />
+        <img src={loader} alt="" className='w-[300px] lg:w-[400px]' />
       </div>
 
 
