@@ -1,8 +1,12 @@
+//@ts-nocheck
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useRef } from "react";
 import Modal from "react-modal";
 import { data, update_data } from "../Data/data";
+import useProject from "../../../ContextStore/Store";
+import { toast } from "react-toastify";
+import 'react-toastify/ReactToastify.css'
 
 Modal.setAppElement('#root')
 
@@ -13,6 +17,15 @@ const CreateProjectModal = () => {
   const [description, setDescription] = useState("");
   const [addData, setData] = useState(data);
 
+  const projects = useProject((state) => state.addProject)
+
+  // const projectNameRef = useRef(null)
+  // const descriptionRef = useRef(null)
+  // const deadLinee = useRef(null)
+
+  const notification = ()=>{
+    toast.success("Successfully created project!",{position:toast.POSITION.BOTTOM_RIGHT})
+  }
 
    const HandleSubmit = (e: any) => {
       e.preventDefault();
@@ -26,12 +39,22 @@ const CreateProjectModal = () => {
         },
       ]);
       update_data(data.length + 1, projectName, description, deadLine);
-      // console.log(addData);
+      console.log(addData);
 
+      // createProject( {
+      //   id: data.length + 1,
+      //   projectName: projectName,
+      //   description: description,
+      //   deadline: deadLine,
+      // })
+
+      notification()
       setShow(false);
     };
 
   
+
+
 
   return (
     <div >

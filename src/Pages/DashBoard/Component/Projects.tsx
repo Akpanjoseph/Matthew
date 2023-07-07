@@ -1,8 +1,11 @@
 
 import { data } from '../Data/data';
 
+// import useProject from '../../../ContextStore/Store';
 
 const Projects = () => {
+
+  // const projects = useProject(state => state.Projects)
 
   return <div className="text-dark pt-[10%] px-2 grid grid-cols-2 ">
     {
