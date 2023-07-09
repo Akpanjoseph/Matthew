@@ -1,36 +1,75 @@
 //@ts-nocheck
-import { faAdd } from "@fortawesome/free-solid-svg-icons";
+import { faAdd, faSearch, faSort, faSortAlphaAsc, faSortAlphaDown, faSortUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import working from "../../../assert/Working-amico.png";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import CreateProjectModal from "./Modal";
 import Projects from "./Projects";
-import { data } from "../Data/data";
+import { useStore } from "../../../Store/store";
 
 const CreateProject = () => {
-  const [projects, setProject] = useState(data);
+  // const [projects, setProject] = useState(data);
   const [displayModal, setDisplayModal] = useState();
 
+  const userProjects = useStore((store) => store.userProject);
+  const showModal = useStore((store) => store.showModal);
 
-  useEffect(()=>{},[projects])
+  // useEffect(()=>{},[projects])
+
+  function userModal(){
+    showModal(true)
+    setDisplayModal(<CreateProjectModal />)
+  }
 
   return (
-    <div className={`flex flex-col lg:justify-center ${projects.length > 0 ? 'w-full mt-20' : '  lg:items-center w-full mt-20'}`}>
-
+    <div
+      className={`flex flex-col lg:justify-center ${
+        userProjects.length > 0
+          ? "w-full mt-20"
+          : "  lg:items-center w-full mt-20"
+      }`}
+    >
       <div className="flex justify-center  lg:px-0 absolute bottom-20 right-10 lg:right-20">
         <button
           className="flex flex-col justify-center items-center w-20 h-20 rounded-full  bg-dark text-white p-4 text-sm shadow-md lg:text-xl "
-          onClick={() => setDisplayModal(<CreateProjectModal />)}
+          onClick={() => userModal() }
         >
           {/* <span>Create Project</span> */}
-          <FontAwesomeIcon icon={faAdd} className="text-lg lg:text-xl font-bold" />
+          <FontAwesomeIcon
+            icon={faAdd}
+            className="text-lg lg:text-xl font-bold"
+          />
         </button>
       </div>
 
+      {/* search bar */}
+      <div className="flex flex-col w-full   justify-center space-y-4 items-center md:flex-row md:justify-center ">
+
+        <div className="flex flex-row justify-center items-center border rounded-full border-dark w-[80%] md:w-1/2 ">
+          <input
+            type="search"
+            className=" outline-none  w-full border-l px-2 py-2 rounded-full  text-sm  lg:py-1"
+          />
+          <button className="bg-dark text-white rounded-r-full px-4 py-2 lg:py-1">
+            <FontAwesomeIcon icon={faSearch} />
+          </button>
+        </div>
+
+        <div className=" md:w-[20%] flex justify-end items-start ">
+          <FontAwesomeIcon icon={faSortAlphaAsc} /> 
+
+          <select name="" id="" className="w-full md:w-2/3">
+            <option value="">Sort</option>
+            <option value="">Date</option>
+            <option value="">Assending</option>
+            <option value="">Desending</option>
+          </select>
+        </div>
+      </div>
 
       <div className="w-full">
-        {projects.length === 0 ? (
+        {userProjects.length === 0 ? (
           <div className="flex flex-col justify-center items-center mt-20 lg:mt-10">
             <img src={working} alt="" className="w-[70%] lg:w-[40%]" />
             <p>No projects Yet!</p>

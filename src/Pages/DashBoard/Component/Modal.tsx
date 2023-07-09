@@ -1,55 +1,35 @@
 //@ts-nocheck
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState,useRef } from "react";
+import { useState } from "react";
 import Modal from "react-modal";
-import { data, update_data } from "../Data/data";
-import useProject from "../../../ContextStore/Store";
 import { toast } from "react-toastify";
 import 'react-toastify/ReactToastify.css'
+import { useStore } from "../../../Store/store";
 
 Modal.setAppElement('#root')
 
 const CreateProjectModal = () => {
-  const [show, setShow] = useState(true);
   const [projectName, setProjectName] = useState("");
-  const [deadLine, setDeadLine] = useState("");
   const [description, setDescription] = useState("");
-  const [addData, setData] = useState(data);
 
-  const projects = useProject((state) => state.addProject)
+  const addProject = useStore((state) => state.addProject)
+  const setModal = useStore( (state) => state.showModal)
+  const showModal = useStore( (state) => state.Modal)
 
-  // const projectNameRef = useRef(null)
-  // const descriptionRef = useRef(null)
-  // const deadLinee = useRef(null)
+ 
 
   const notification = ()=>{
     toast.success("Successfully created project!",{position:toast.POSITION.BOTTOM_RIGHT})
   }
 
-   const HandleSubmit = (e: any) => {
+   const HandleSubmit = (e) => {
       e.preventDefault();
-      setData([
-        ...addData,
-        {
-          id: data.length + 1,
-          projectName: projectName,
-          description: description,
-          deadline: deadLine,
-        },
-      ]);
-      update_data(data.length + 1, projectName, description, deadLine);
-      console.log(addData);
 
-      // createProject( {
-      //   id: data.length + 1,
-      //   projectName: projectName,
-      //   description: description,
-      //   deadline: deadLine,
-      // })
+      addProject(projectName,description)
+      console.log(projectName,description)
 
-      notification()
-      setShow(false);
+      setModal(false)
     };
 
   
@@ -60,7 +40,7 @@ const CreateProjectModal = () => {
     <div >
       
       <Modal
-        isOpen={show}
+        isOpen={showModal}
         className={'lg:w-[40%] w-[90%]  bg-white border-b-4 border-t-4 border-secondary shadow-md  '}
         contentLabel={"Create Project"}
         onRequestClose={() => alert("Click on the close button to close modal")}
@@ -86,7 +66,7 @@ const CreateProjectModal = () => {
      
 
      <div className="text-right">
-          <button onClick={() => setShow(false)}>
+          <button onClick={() => setModal(false)}>
             {" "}
             <FontAwesomeIcon
               icon={faClose}
@@ -111,23 +91,13 @@ const CreateProjectModal = () => {
             />
           </div>
 
-          <div className="my-4">
-            <label htmlFor=""> Set Deadline:</label>
-
-            <input
-              type={"datetime-local"}
-              className="border-2 border-gray-500 w-full py-2 placeholder:text-gray-500 px-4 rounded-md active:border-secondary"
-              value={deadLine}
-              onChange={(e) => setDeadLine(e.target.value)}
-            />
-          </div>
 
           <textarea
             name=""
             id=""
             cols={52}
             rows={2}
-            className="border-2 border-gray-500 w-full py-2 placeholder:text-gray-500 px-4 rounded-md active:border-secondary"
+            className="border-2 border-gray-500 w-full py-2 placeholder:text-gray-500 px-4 my-5 rounded-md active:border-secondary"
             placeholder="Description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
@@ -135,7 +105,7 @@ const CreateProjectModal = () => {
 
           <div className="flex justify-center items-center mt-5">
             <button
-              className="bg-dark text-white w-full py-3 rounded-md hover:bg-white lg:lg:px-40 hover:text-dark hover:border-2 border-dark "
+              className="bg-dark text-white w-full py-3 rounded-md hover:bg-white  hover:text-dark hover:border-2 border-dark "
               onClick={(e) => HandleSubmit(e)}
             >
               Create Project
