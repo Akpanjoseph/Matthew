@@ -4,7 +4,7 @@
 // import useProject from '../../../ContextStore/Store';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useStore } from "../../../Store/store";
+import { useStore } from "../../../../Store/store";
 import {
   faArrowCircleLeft,
   faArrowCircleRight,
@@ -30,12 +30,11 @@ const Projects = () => {
             <p className="text-sm font-extralight">
               <small>{data.projectDescription}</small>
             </p>
-            {data?.subTask ? (
-              <div className="flex justify-between py-2">
-                 <p className=""><small>Total Task: </small> {data.subTask.length}</p>
+            <div className="flex justify-between py-2">
+                 <p className=""><small>Total Task: </small> {data.subTask.length }</p>
                 <p >
                  <small className="flex space-x-2 items-center">
-                 <span className="text-sm">Progress:</span>
+                 <span className="text-sm text-red-600">Progress:</span>
                   <span className="h-6 w-6 p-3 border-2 rounded-full flex justify-center items-center">
                     {" "}
                     {
@@ -49,17 +48,6 @@ const Projects = () => {
                 </p>
 
               </div>
-            ) : (
-              <div className="flex flex-row justify-end  px-2">
-                {/* <p>create mile </p> */}
-                <button>
-                  <FontAwesomeIcon
-                    icon={faArrowCircleRight}
-                    className="pt-1 px-2"
-                  />{" "}
-                </button>
-              </div>
-            )}
           </div>
         );
       })}

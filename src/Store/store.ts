@@ -27,7 +27,7 @@ const store = (set) => ({
           name: projectName,
           projectDescription: description,
           subTask: [
-            { id: 1, task: "cook rice", status: "start" },
+            { id: 1, task: "cook rice", status: "inProgress" },
             { id: 2, task: "set table", status: "inProgress" },
           ],
         },

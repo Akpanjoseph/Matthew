@@ -15,8 +15,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../assert/logo.png";
 import Home from "./Component/Home";
-import CreateProject from "./Component/CreateProject";
-import Projects from "./Component/Projects";
+import CreateProject from "./Component/ProjectSection/CreateProjectScreen";
+import Projects from "./Component/ProjectSection/ProjectCard";
 import Meeting from "./Component/Meeting";
 import Settings from "./Component/Settings";
 import Team from "./Team";

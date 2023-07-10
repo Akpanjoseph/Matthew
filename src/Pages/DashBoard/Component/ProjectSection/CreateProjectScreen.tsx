@@ -1,12 +1,12 @@
 //@ts-nocheck
 import { faAdd, faSearch, faSort, faSortAlphaAsc, faSortAlphaDown, faSortUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import working from "../../../assert/Working-amico.png";
+import working from "../../../../assert/Working-amico.png";
 import { useState, useEffect } from "react";
 import Modal from "react-modal";
-import CreateProjectModal from "./Modal";
-import Projects from "./Projects";
-import { useStore } from "../../../Store/store";
+import CreateProjectModal from "./CreateProjectModal";
+import Projects from "./ProjectCard";
+import { useStore } from "../../../../Store/store";
 
 const CreateProject = () => {
   // const [projects, setProject] = useState(data);
@@ -59,8 +59,8 @@ const CreateProject = () => {
         <div className=" md:w-[20%] flex justify-end items-start ">
           <FontAwesomeIcon icon={faSortAlphaAsc} /> 
 
-          <select name="" id="" className="w-full md:w-2/3">
-            <option value="">Sort</option>
+          <select name="" id="" className="w-full md:w-2/3 outline-none px-2 ">
+            <option value=""><span>Sort</span></option>
             <option value="">Date</option>
             <option value="">Assending</option>
             <option value="">Desending</option>

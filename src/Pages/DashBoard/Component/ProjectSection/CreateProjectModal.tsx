@@ -3,9 +3,9 @@ import { faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import Modal from "react-modal";
-import { toast } from "react-toastify";
+import { toast,ToastContainer } from "react-toastify";
 import 'react-toastify/ReactToastify.css'
-import { useStore } from "../../../Store/store";
+import { useStore } from "../../../../Store/store";
 
 Modal.setAppElement('#root')
 
@@ -19,17 +19,24 @@ const CreateProjectModal = () => {
 
  
 
-  const notification = ()=>{
-    toast.success("Successfully created project!",{position:toast.POSITION.BOTTOM_RIGHT})
-  }
-
+ 
    const HandleSubmit = (e) => {
       e.preventDefault();
 
-      addProject(projectName,description)
-      console.log(projectName,description)
+      if(projectName.trim().length ===0){
+        toast.error("Project name cannnot be empty",{autoClose:5000})
+      }
+      else if(description.trim().length=== 0){
+        toast.error("Description cannnot be empty",{autoClose:5000})
+      }else{
+        
+        toast.success("Successfully created project!")
+              addProject(projectName,description)
+              setProjectName("")
+              setDescription("")
+              setModal(false)
 
-      setModal(false)
+      }
     };
 
   
@@ -43,7 +50,7 @@ const CreateProjectModal = () => {
         isOpen={showModal}
         className={'lg:w-[40%] w-[90%]  bg-white border-b-4 border-t-4 border-secondary shadow-md  '}
         contentLabel={"Create Project"}
-        onRequestClose={() => alert("Click on the close button to close modal")}
+        onRequestClose={() => toast.warning("Click on the close button to close modal")}
         style={{
           content: {
             // width: "50%",
@@ -80,6 +87,8 @@ const CreateProjectModal = () => {
           Create new project
         </p>
 
+       
+
         <form className="mt-10 mx-4">
           <div>
             <input
@@ -96,7 +105,7 @@ const CreateProjectModal = () => {
             name=""
             id=""
             cols={52}
-            rows={2}
+            rows={4}
             className="border-2 border-gray-500 w-full py-2 placeholder:text-gray-500 px-4 my-5 rounded-md active:border-secondary"
             placeholder="Description"
             value={description}
@@ -112,8 +121,10 @@ const CreateProjectModal = () => {
             </button>
           </div>
         </form>
-     
+       
       </Modal>
+
+      <ToastContainer position="top-right"  />
     </div>
   );
 };
