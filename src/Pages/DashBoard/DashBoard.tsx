@@ -7,6 +7,7 @@ import {
   faBook,
   faCog,
   faHome,
+  faMessage,
   faPieChart,
   faRightToBracket,
   faUser,
@@ -68,14 +69,22 @@ const DashBoard = () => {
       <div className="flex w-full h-full lg:space-x-4">
         <section className="w-[20%] pt-4  rounded-sm hidden   justify-center h-screen border-r-2 border-gray-300 shadow-md  md:flex">
 
-          <aside className="w-full flex flex-col text-center pt-40 px-2 space-y-10  ">
+          <aside className="w-full flex flex-col text-center pt-40  space-y-10  ">
 
-            <p className={`hover:bg-secondary flex space-x-2 p-4 ${active == 1 ? 'bg-secondary text-white' : ''} rounded-md shadow-md `} onClick={()=> ( setDisplay(<CreateProject/>), setActive(1))}>
+            <p className={`hover:bg-secondary flex space-x-2 p-4  ${active == 1 ? 'bg-secondary text-white  shadow-md text-lg py-5 ' : ''} rounded-md hover:text-white `} onClick={()=> ( setDisplay(<CreateProject/>), setActive(1))}>
               <FontAwesomeIcon icon={faPieChart} size="lg" /> <span>Projects</span>
             </p>
 
-            <p className={`hover:bg-secondary p-4 flex space-x-2 ${active == 2 ? 'bg-secondary text-white' : ''} rounded-md shadow-md `} onClick={()=> (setDisplay(<Team/>), setActive(2))}>
+            <p className={`hover:bg-secondary p-4 flex space-x-2 ${active == 2 ? 'bg-secondary text-white text-lg shadow-md py-5 ' : ''} rounded-md hover:text-white `} onClick={()=> (setDisplay(<Team/>), setActive(2))}>
               <FontAwesomeIcon icon={faUserFriends} size="lg" /> <span>Teams</span>
+            </p>
+
+            <p className={`hover:bg-secondary p-4 flex space-x-2 ${active == 3 ? 'bg-secondary text-white text-lg shadow-md py-5' : ''} rounded-md hover:text-white `} onClick={()=> (setDisplay(<Team/>), setActive(3))}>
+              <FontAwesomeIcon icon={faMessage} size="lg" /> <span>Inbox</span>
+            </p>
+
+            <p className={`hover:bg-secondary p-4 flex space-x-2 ${active == 4 ? 'bg-secondary text-white text-lg shadow-md py-5' : ''} rounded-md hover:text-white `} onClick={()=> (setDisplay(<Team/>), setActive(4))}>
+              <FontAwesomeIcon icon={faCog} size="lg" /> <span>Setting</span>
             </p>
 
           
