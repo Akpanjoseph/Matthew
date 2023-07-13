@@ -26,9 +26,10 @@ const store = (set) => ({
           id: Math.floor(Math.random() * 3532) - 10,
           name: projectName,
           projectDescription: description,
+          status:'pending',
           subTask: [
-            { id: 1, task: "cook rice", status: "inProgress" },
-            { id: 2, task: "set table", status: "inProgress" },
+            // { id: 1, task: "cook rice", status: "inProgress" },
+            // { id: 2, task: "set table", status: "next up"  },
           ],
         },
       ],

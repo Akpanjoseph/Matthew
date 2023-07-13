@@ -48,10 +48,10 @@ const CreateProject = () => {
 
         <div className="flex flex-row justify-center items-center border rounded-full border-dark w-[80%] md:w-1/2 ">
           <input
-            type="search"
-            className=" outline-none  w-full border-l px-4 py-2 rounded-full  text-sm  lg:py-2"
+            type="search" placeholder="search task.."
+            className=" outline-none  w-full border-l px-4 py-1 rounded-full  text-sm  "
           />
-          <button className=" flex justify-center item-center bg-dark text-white rounded-r-full px-6 py-3  lg:py-4">
+          <button className=" flex justify-center item-center bg-dark text-white rounded-r-full px-6 py-3  ">
             <FontAwesomeIcon icon={faSearch} className="text-lg" />
           </button>
         </div>
