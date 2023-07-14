@@ -21,7 +21,7 @@ import Projects from "./Component/ProjectSection/ProjectCard";
 import Meeting from "./Component/Meeting";
 import Settings from "./Component/Settings";
 import Team from "./Team";
-
+import { useStore } from "../../Store/store";
 
 
 const DashBoard = () => {
