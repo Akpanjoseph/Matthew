@@ -1,27 +1,22 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faAdd,
   faBars,
   faBell,
-  faBook,
   faCog,
-  faHome,
   faMessage,
   faPieChart,
-  faRightToBracket,
   faUser,
   faUserFriends,
-  faVideo,
 } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../assert/logo.png";
-import Home from "./Component/Home";
+// import Home from "./Component/Home";
 import CreateProject from "./Component/ProjectSection/CreateProjectScreen";
-import Projects from "./Component/ProjectSection/ProjectCard";
-import Meeting from "./Component/Meeting";
+// import Projects from "./Component/ProjectSection/ProjectCard";
+// import Meeting from "./Component/Meeting";
 import Settings from "./Component/Settings";
 import Team from "./Team";
-import { useStore } from "../../Store/store";
+// import { useStore } from "../../Store/store";
 
 
 const DashBoard = () => {
