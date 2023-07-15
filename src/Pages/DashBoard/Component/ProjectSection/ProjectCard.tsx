@@ -15,21 +15,32 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faRProject } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
+import Task from "./TaskSection/Task";
 
 const Projects = () => {
   const userProject = useStore((store) => store.userProject);
   const taskDetails = useStore((store) => store.addToSelectedtask);
+  const display = useStore(store => store.showTaskMenu)
+  const setDisplay = useStore(store => store.switchShowTask)
+  const setCreateProjectButton = useStore(store => store.switchCreateProjectButton)
+  // const [dispaly,setDisplay] = useState(false)
+
 
   const navigate = useNavigate();
 
   const taskDetail = (data) => {
     taskDetails(data);
-    // console.log(data);
-    
-    navigate(`/dashboard/task`);
+    // navigate(`/dashboard/task`);
+    setDisplay(true)
+    setCreateProjectButton(false)
   };
 
+
+
   return (
+    display ? 
+    <Task/> 
+    :
     <div className="text-dark pt-[10%] px-2 grid  grid-cols-1 md:grid-cols-2 ">
       {userProject.map((data) => {
         // const counter =

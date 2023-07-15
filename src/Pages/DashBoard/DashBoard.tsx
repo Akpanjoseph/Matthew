@@ -62,9 +62,9 @@ const DashBoard = () => {
 
       {/* main dash board section */}
       <div className="flex w-full h-full lg:space-x-4">
-        <section className="w-[20%] pt-4  rounded-sm hidden   justify-center h-screen border-r-2 border-gray-300 shadow-md  md:flex">
+        <section className="w-[15%] pt-4  rounded-sm hidden   justify-center h-screen border-r-2 border-gray-300 shadow-md  md:flex">
 
-          <aside className="w-full flex flex-col text-center pt-40  space-y-10  ">
+          <aside className="w-full flex flex-col text-center pt-20  space-y-5  ">
 
             <p className={`hover:bg-secondary flex space-x-2 p-4  ${active == 1 ? 'bg-secondary text-white  shadow-md text-lg py-5 ' : ''} rounded-md hover:text-white `} onClick={()=> ( setDisplay(<CreateProject/>), setActive(1))}>
               <FontAwesomeIcon icon={faPieChart} size="lg" /> <span>Projects</span>

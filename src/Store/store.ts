@@ -3,9 +3,14 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 const store = (set) => ({
   userProject: [],
+  mileStone: [],
   selectedTask: [],
 
   Modal: false,
+
+  showTaskMenu : false,
+
+  showCreateProjectButton: true,
 
   // detailMenuSection : `<CreateProject` ,
 
@@ -33,6 +38,14 @@ const store = (set) => ({
   addToSelectedtask: (task) =>
     set({
       selectedTask: [task],
+    }),
+
+
+    switchShowTask : (value) => set({
+      showTaskMenu:value
+    }),
+    switchCreateProjectButton : (value) => set({
+      showCreateProjectButton:value
     }),
 
 //  setDetailMenuSection : (component) =>

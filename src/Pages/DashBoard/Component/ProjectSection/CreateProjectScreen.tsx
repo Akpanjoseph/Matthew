@@ -14,6 +14,7 @@ const CreateProject = () => {
 
   const userProjects = useStore((store) => store.userProject);
   const showModal = useStore((store) => store.showModal);
+  const showCreateProjectButton = useStore((store) => store.showCreateProjectButton);
 
   // useEffect(()=>{},[projects])
 
@@ -30,7 +31,7 @@ const CreateProject = () => {
           : "  lg:items-center w-full mt-20"
       }`}
     >
-      <div className="flex justify-center  lg:px-0 absolute bottom-20 right-10 lg:right-20">
+      <div className={` ${showCreateProjectButton ? 'flex justify-center': 'hidden'}  lg:px-0 absolute bottom-20 right-10 lg:right-20`}>
         <button
           className="flex flex-col justify-center items-center w-20 h-20 rounded-full  bg-dark text-white p-4 text-sm shadow-md lg:text-xl "
           onClick={() => userModal() }
@@ -44,17 +45,9 @@ const CreateProject = () => {
       </div>
 
       {/* search bar */}
-      <div className="flex flex-col w-full   justify-center space-y-4 items-center md:flex-row md:justify-center ">
+      {/* <div className="flex flex-col w-full   justify-center space-y-4 items-center md:flex-row md:justify-center ">
 
-        <div className="flex flex-row justify-center items-center border rounded-full border-dark w-[80%] md:w-1/2 ">
-          <input
-            type="search" placeholder="search task.."
-            className=" outline-none  w-full border-l px-4 py-1 rounded-full  text-sm  "
-          />
-          <button className=" flex justify-center item-center bg-dark text-white rounded-r-full px-6 py-3  ">
-            <FontAwesomeIcon icon={faSearch} className="text-lg" />
-          </button>
-        </div>
+        
 
         <div className=" md:w-[20%] flex justify-end items-start ">
           <FontAwesomeIcon icon={faSortAlphaAsc} /> 
@@ -65,8 +58,8 @@ const CreateProject = () => {
             <option value="">Assending</option>
             <option value="">Desending</option>
           </select>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
 
       <div className="w-full">
         {userProjects.length === 0 ? (
