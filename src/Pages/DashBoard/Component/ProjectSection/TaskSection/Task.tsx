@@ -15,6 +15,7 @@ const Task = () => {
 
       <div className="flex justify-evenly items-center w-full space-x-4">
         
+        
       <button className="mt-4 text-xl font-bold" onClick={() => (setDisplay(false),setCreateProjectButton(true))}>
           <FontAwesomeIcon icon={faArrowLeft} />
           <span className="px-2">Back</span>
