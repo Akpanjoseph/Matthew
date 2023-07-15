@@ -62,7 +62,7 @@ const DashBoard = () => {
 
       {/* main dash board section */}
       <div className="flex w-full h-full lg:space-x-4">
-        <section className="w-[15%] pt-4  rounded-sm hidden   justify-center h-screen border-r-2 border-gray-300 shadow-md  md:flex">
+        <section className="w-[17%] pt-4  rounded-sm hidden   justify-center h-screen border-r-2 border-gray-300 shadow-md  md:flex">
 
           <aside className="w-full flex flex-col text-center pt-20  space-y-5  ">
 

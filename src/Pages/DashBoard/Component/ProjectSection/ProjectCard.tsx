@@ -50,6 +50,7 @@ const Projects = () => {
             className="shadow-2xl my-4 border border-gray-200 px-4 py-2 rounded-lg mx-2"
           >
             <div className="flex justify-between">
+             
               <p className="py-3">
                 <small
                   className={`${
