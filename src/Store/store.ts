@@ -25,23 +25,21 @@ const store = (set) => ({
           name: projectName,
           projectDescription: description,
           status: "pending",
-          subTask: [
-            { id: 1, task: "create app image for videos", status: "inProgress" },
-            { id: 2, task: "set table app image for videos aap image for videos aap image for videos", status: "next up"  },
-            { id: 3, task: "set table", status: "next up"  },
-            { id: 4, task: " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis inventore perspiciatis minus explicabo modi laborum quis voluptate rerum iste vero esse dolorum accusamus illo tenetur, nisi praesentium autem blanditiis ad?", status: "next up"  },
-          ],
+          subTask: [],
         },
       ],
     })),
 
-    
+  
   
   addToSelectedtask: (task) =>
     set({
       selectedTask: [task],
     }),
 
+    updateProject :(value) => set({
+      userProject: [value]
+    }) , 
 
     switchShowTask : (value) => set({
       showTaskMenu:value
@@ -50,7 +48,14 @@ const store = (set) => ({
       showCreateProjectButton:value
     }),
 
-//  setDetailMenuSection : (component) =>
+    // save_SelectedTask_to_userProject:()=>{
+    //   set(store => ({
+    //     userProject
+    //   }))
+    //    )
+    // }
+    
+ 
 });
 
 export const useStore = create(store);

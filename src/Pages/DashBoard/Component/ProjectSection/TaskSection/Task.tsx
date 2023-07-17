@@ -10,13 +10,40 @@ import {
   faStop,
   faTrashCan,
 } from "@fortawesome/free-solid-svg-icons";
+import { useEffect } from "react";
 
 const Task = () => {
   const task = useStore((store) => store.selectedTask);
+  const addMileStone = useStore((store) => store.addToSelectedtask);
   const setDisplay = useStore((store) => store.switchShowTask);
+  // const saveTaskToProject = useStore((store) => store.save_SelectedTask_to_userProject);
   const setCreateProjectButton = useStore(
     (store) => store.switchCreateProjectButton
   );
+
+  const dataBase = useStore(store => store.userProject)
+  const updateDataBase = ( store => store.updateProject)
+
+  function createMileStone (){
+   task.map(mileStone => {
+    mileStone.subTask.push({id:mileStone.subTask.length + 1,task:"test",status:'pending'})
+    addMileStone(mileStone)
+
+  } )
+
+  console.log(task[0].id)
+
+  const test = dataBase.filter( allTask => allTask.id =! task[0].id)
+  console.log(test);
+
+  updateDataBase(test)
+  
+  
+  }
+
+
+
+  
 
   return (
     <div className="">
@@ -43,7 +70,7 @@ const Task = () => {
         </div>
 
         <div className="flex justify-evenly space-x-2 text-sm lg:text-md">
-          <button className="px-3 py-2 border-dark rounded-md hover:bg-white hover:text-dark hover:border-2 ">
+          <button className="px-3 py-2 border-dark rounded-md hover:bg-white hover:text-dark hover:border-2 " onClick={()=> createMileStone()}>
             <span>Create milestone</span>
           </button>
           <button className="rounded-md px-3 py-2 border-dark hover:bg-white hover:text-dark hover:border-2 ">
@@ -56,15 +83,15 @@ const Task = () => {
       </div>
 
       <div className="text-dark pt-[2%] px-2  ">
-        {task.map((e) => {
+        {task.map((data) => {
           return (
-            <div key={e.id}>
+            <div key={data.id}>
               <p className=" text-center  mt-10 underline text-2xl capitalize font-bold ">
-                {e.name}
+                {data.name}
               </p>
 
               <div className="mt-[10%] w-full">
-                {e.subTask.map((task) => {
+                {data.subTask.map((task) => {
                   return (
                     <div
                       className={`shadow-2xl my-6 border border-gray-200  py-4 rounded-lg lg:mx-4 ${task.id % 2 !== 0 ? "bg-gray-200" : "bg-slate-300"

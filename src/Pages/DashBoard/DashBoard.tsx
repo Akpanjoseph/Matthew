@@ -78,9 +78,7 @@ const DashBoard = () => {
               <FontAwesomeIcon icon={faMessage} size="lg" /> <span>Inbox</span>
             </p>
 
-            <p className={`hover:bg-secondary p-4 flex space-x-2 ${active == 4 ? 'bg-secondary text-white text-lg shadow-md py-5' : ''} rounded-md hover:text-white `} onClick={()=> (setDisplay(<Team/>), setActive(4))}>
-              <FontAwesomeIcon icon={faCog} size="lg" /> <span>Setting</span>
-            </p>
+          
 
           
           </aside>
