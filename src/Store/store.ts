@@ -33,7 +33,7 @@ const store = (set) => ({
     }),
 
     updateSelectedTask: (task)=> set({
-      selectedTask : task
+      selectedTask : selectedTask.subTask[value]
     }),
 
     updateProject :(value) => set({

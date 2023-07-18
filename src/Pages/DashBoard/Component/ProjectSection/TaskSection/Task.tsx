@@ -34,13 +34,15 @@ const Task = () => {
 
   function createMileStone (){
    task.map(mileStone => {
-    mileStone.subTask.push({id:Math.floor(Math.random(0,667) *100),task:"test",status:'pending'})
+    mileStone.subTask.push({id:mileStone.subTask.length + 1,task:"test",status:'pending'})
     addMileStone(mileStone)
 
   } )
-  const upDatedTaskList = dataBase.filter( allTask => allTask.id =! task[0].id)
+  const upDatedTaskList = dataBase.filter( allTask => allTask.task =! task[0].task)
   updateDataBase(upDatedTaskList)
   toast.success('created mile stone')
+  console.log(upDatedTaskList);
+  
   }
 
 
@@ -50,14 +52,19 @@ function startMileStone(mileStone){
 }
   
 function deleteMileStone(mileStone,task){
-//  const remove = mileStone.subTask.filter(allTask => allTask.id != mileStone.id)
+ const remove = mileStone.subTask.filter(allTask => allTask != task)
+   mileStone.subTask=[]
+   mileStone.subTask[remove]
+  //  updateSelectedTask(mileStone)
 
-// const remove =mileStone.subTask.map( allTask => allTask ).filter(e => e.id != task.id)
-
-// const remove =mileStone.filter(e => e.id =! task.id)
-// console.log(remove);
+// const upDatedTaskList = dataBase.filter( allTask => allTask =! mileStone)
+// updateDataBase(upDatedTaskList)
 console.log(mileStone);
-console.log(task);
+console.log(remove);
+
+// console.log(task);
+// console.log(mileStone);
+
 
 
 
@@ -118,7 +125,7 @@ console.log(task);
                         }`}
                     >
                       <div className="flex space-y-4  flex-col lg:flex-row lg:justify-between ">
-                        <p className="px-4 box-content text-left text-sm lg:text-md lg:w-[35%] ">{task.task}</p>
+                        <p className="px-4 box-content text-left text-sm lg:text-md lg:w-[35%] ">{task.task}{task.id}</p>
 
                         <div className="flex justify-center items-center space-y-2 w-full  box-content flex-col px-2 lg:justify-evenly lg:items-end lg:w-[70%]">
 
@@ -130,7 +137,7 @@ console.log(task);
                             </button>
 
 
-                            <button className=" px-2 text-red-700 flex flex-col" onClick={()=> deleteMileStone(data.subTask,task)}>
+                            <button className=" px-2 text-red-700 flex flex-col" onClick={()=> deleteMileStone(data,task)}>
                               <FontAwesomeIcon icon={faTrashCan} />
                               <span>{"Remove"}</span>
 
