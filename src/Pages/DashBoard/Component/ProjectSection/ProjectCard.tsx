@@ -86,7 +86,7 @@ const Projects = () => {
                     {" "}
                     {
                       data.subTask?.filter(
-                        (task) => task.status === "inProgress"
+                        (task) => task.status === "completed"
                       ).length
                     }
                     /{data.subTask?.length}

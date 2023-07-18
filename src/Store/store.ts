@@ -5,16 +5,11 @@ const store = (set) => ({
   userProject: [],
   mileStone: [],
   selectedTask: [],
-
   Modal: false,
-
   showTaskMenu : false,
-
   showCreateProjectButton: true,
 
-  // detailMenuSection : `<CreateProject` ,
-
-  showModal: (show) => set((store) => ({ Modal: show })),
+  
 
   addProject: (projectName, description) =>
     set((store) => ({
@@ -37,6 +32,10 @@ const store = (set) => ({
       selectedTask: [task],
     }),
 
+    updateSelectedTask: (task)=> set({
+      selectedTask : task
+    }),
+
     updateProject :(value) => set({
       userProject: [value]
     }) , 
@@ -44,17 +43,12 @@ const store = (set) => ({
     switchShowTask : (value) => set({
       showTaskMenu:value
     }),
+
     switchCreateProjectButton : (value) => set({
       showCreateProjectButton:value
     }),
 
-    // save_SelectedTask_to_userProject:()=>{
-    //   set(store => ({
-    //     userProject
-    //   }))
-    //    )
-    // }
-    
+    showModal: (show) => set((store) => ({ Modal: show })),
  
 });
 

@@ -1,6 +1,8 @@
 //@ts-nocheck
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useStore } from "../../../../../Store/store";
+import { ToastContainer,toast } from "react-toastify";
+import 'react-toastify/ReactToastify.css'
 import {
   faAdd,
   faArrowLeft,
@@ -9,41 +11,59 @@ import {
   faSearch,
   faStop,
   faTrashCan,
+  faPause
 } from "@fortawesome/free-solid-svg-icons";
-import { useEffect } from "react";
+import { useState } from "react";
+
 
 const Task = () => {
+
   const task = useStore((store) => store.selectedTask);
   const addMileStone = useStore((store) => store.addToSelectedtask);
   const setDisplay = useStore((store) => store.switchShowTask);
-  // const saveTaskToProject = useStore((store) => store.save_SelectedTask_to_userProject);
   const setCreateProjectButton = useStore(
     (store) => store.switchCreateProjectButton
   );
 
   const dataBase = useStore(store => store.userProject)
   const updateDataBase = ( store => store.updateProject)
+  const updateSelectedTask = ( store => store.updateSelectedTask)
+
+  // const [icon,setIcon] = useState(faPlayCircle)
+
 
   function createMileStone (){
    task.map(mileStone => {
-    mileStone.subTask.push({id:mileStone.subTask.length + 1,task:"test",status:'pending'})
+    mileStone.subTask.push({id:Math.floor(Math.random(0,667) *100),task:"test",status:'pending'})
     addMileStone(mileStone)
 
   } )
-
-  console.log(task[0].id)
-
-  const test = dataBase.filter( allTask => allTask.id =! task[0].id)
-  console.log(test);
-
-  updateDataBase(test)
-  
-  
+  const upDatedTaskList = dataBase.filter( allTask => allTask.id =! task[0].id)
+  updateDataBase(upDatedTaskList)
+  toast.success('created mile stone')
   }
 
 
-
+function startMileStone(mileStone){
+  mileStone.status ='inProgress'
+  task[0].status = 'inProgress'
+}
   
+function deleteMileStone(mileStone,task){
+//  const remove = mileStone.subTask.filter(allTask => allTask.id != mileStone.id)
+
+// const remove =mileStone.subTask.map( allTask => allTask ).filter(e => e.id != task.id)
+
+// const remove =mileStone.filter(e => e.id =! task.id)
+// console.log(remove);
+console.log(mileStone);
+console.log(task);
+
+
+
+
+
+}
 
   return (
     <div className="">
@@ -104,17 +124,17 @@ const Task = () => {
 
 
                           <div className="flex  justify-center items-center space-x-6 lg:space-x-2 ">
-                            <p className=" px-2 text-green-600 flex flex-col">
-                             
+                            <button className=" px-2 text-green-600 flex flex-col justify-center items-center" onClick={()=> startMileStone(task)}>
                               <FontAwesomeIcon icon={faPlayCircle} />
                               <span>{"Start"}</span>
+                            </button>
 
-                            </p>
-                            <p className=" px-2 text-red-700 flex flex-col">
+
+                            <button className=" px-2 text-red-700 flex flex-col" onClick={()=> deleteMileStone(data.subTask,task)}>
                               <FontAwesomeIcon icon={faTrashCan} />
                               <span>{"Remove"}</span>
 
-                            </p>
+                            </button>
                             <p className=" px-2 text-orange-600 flex flex-col">
                               <FontAwesomeIcon icon={faStop} />
                               <span>{"Completed"}</span>
@@ -128,8 +148,8 @@ const Task = () => {
                           </div>
 
                           <p className="text-right w-[70%]">
-                            <small>Time -  <span className="font-mono">
-                              H: 00 M: 30 S: 45
+                            <small>Time Frame -  <span className="font-mono">
+                              H: 00 M: 30 
                             </span></small>
                           </p>
                         </div>
@@ -142,6 +162,8 @@ const Task = () => {
           );
         })}
       </div>
+
+      <ToastContainer />
     </div>
   );
 };

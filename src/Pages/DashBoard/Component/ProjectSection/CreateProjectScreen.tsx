@@ -31,9 +31,9 @@ const CreateProject = () => {
           : "  lg:items-center w-full mt-20"
       }`}
     >
-      <div className={` ${showCreateProjectButton ? 'flex justify-center': 'hidden'}  lg:px-0 absolute bottom-20 right-10 lg:right-20`}>
+      <div className={` ${showCreateProjectButton ? 'flex justify-center': 'hidden'}  lg:px-0 absolute bottom-14 right-5 lg:right-20`}>
         <button
-          className="flex flex-col justify-center items-center w-20 h-20 rounded-full  bg-dark text-white p-4 text-sm shadow-md lg:text-xl "
+          className="flex flex-col justify-center items-center w-16 h-16 rounded-full  bg-dark text-white p-4 text-sm shadow-md lg:text-xl "
           onClick={() => userModal() }
         >
           {/* <span>Create Project</span> */}
