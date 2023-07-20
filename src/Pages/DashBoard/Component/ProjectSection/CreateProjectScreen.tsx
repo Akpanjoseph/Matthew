@@ -7,17 +7,17 @@ import Modal from "react-modal";
 import CreateProjectModal from "./CreateProjectModal";
 import Projects from "./ProjectCard";
 import { useStore } from "../../../../Store/store";
+import Tippy from "@tippyjs/react";
 
 const CreateProject = () => {
-  // const [projects, setProject] = useState(data);
+  
   const [displayModal, setDisplayModal] = useState();
 
   const userProjects = useStore((store) => store.userProject);
   const showModal = useStore((store) => store.showModal);
   const showCreateProjectButton = useStore((store) => store.showCreateProjectButton);
 
-  // useEffect(()=>{},[projects])
-
+  
   function userModal(){
     showModal(true)
     setDisplayModal(<CreateProjectModal />)
@@ -32,6 +32,7 @@ const CreateProject = () => {
       }`}
     >
       <div className={` ${showCreateProjectButton ? 'flex justify-center': 'hidden'}  lg:px-0 absolute bottom-14 right-5 lg:right-20`}>
+        <Tippy content="create new project" placement="right-start">
         <button
           className="flex flex-col justify-center items-center w-16 h-16 rounded-full  bg-dark text-white p-4 text-sm shadow-md lg:text-xl "
           onClick={() => userModal() }
@@ -42,6 +43,7 @@ const CreateProject = () => {
             className="text-lg lg:text-xl font-bold"
           />
         </button>
+        </Tippy>
       </div>
 
       {/* search bar */}

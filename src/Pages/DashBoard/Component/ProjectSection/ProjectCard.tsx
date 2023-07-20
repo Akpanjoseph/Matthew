@@ -15,7 +15,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faRProject } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
-import Task from "./TaskSection/Task";
+import Task from "./TaskSection/MileStones";
 
 const Projects = () => {
   const userProject = useStore((store) => store.userProject);

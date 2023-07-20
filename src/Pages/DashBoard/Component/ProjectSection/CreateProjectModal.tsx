@@ -6,6 +6,7 @@ import Modal from "react-modal";
 import { toast,ToastContainer } from "react-toastify";
 import 'react-toastify/ReactToastify.css'
 import { useStore } from "../../../../Store/store";
+import Tippy from "@tippyjs/react";
 
 Modal.setAppElement('#root')
 
@@ -48,7 +49,7 @@ const CreateProjectModal = () => {
       
       <Modal
         isOpen={showModal}
-        className={'lg:w-[40%] w-[90%]  bg-white border-b-4 border-t-4 border-secondary shadow-md  '}
+        className={'lg:w-[40%] w-[90%]  bg-white shadow-md  '}
         contentLabel={"Create Project"}
         onRequestClose={() => toast.warning("Click on the close button to close modal")}
         style={{
@@ -73,6 +74,7 @@ const CreateProjectModal = () => {
      
 
      <div className="text-right">
+          <Tippy content='close' placement="right">
           <button onClick={() => setModal(false)}>
             {" "}
             <FontAwesomeIcon
@@ -81,6 +83,7 @@ const CreateProjectModal = () => {
               className="bg-red-700 text-white px-4 py-2"
             />
           </button>
+          </Tippy>
         </div>
 
         <p className="text-center font-bold text-2xl capitalize">

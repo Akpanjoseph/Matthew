@@ -9,7 +9,7 @@ import Login from './Pages/Accounts/LoginPage/Login'
 import Signup from './Pages/Accounts/SignupPage/Signup'
 import DashBoard from './Pages/DashBoard/DashBoard'
 import { elements } from 'chart.js'
-import Task from './Pages/DashBoard/Component/ProjectSection/TaskSection/Task'
+import Task from './Pages/DashBoard/Component/ProjectSection/TaskSection/MileStones'
 
 function App() {
 

@@ -1,8 +1,14 @@
 //@ts-nocheck
 
+import Modal from 'react-modal'
+
 const AddMileStoneModal = ()=>{
     return(
-        <div></div>
+        <>
+
+       
+
+        </>
     )
 }
 
