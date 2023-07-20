@@ -38,7 +38,7 @@ const Task = () => {
     addMileStone(mileStone)
 
   } )
-  const upDatedTaskList = dataBase.filter( allTask => allTask.task =! task[0].task)
+  const upDatedTaskList = dataBase.filter( allTask => allTask.id ==! task[0].id)
   updateDataBase(upDatedTaskList)
   toast.success('created mile stone')
   console.log(upDatedTaskList);
@@ -51,21 +51,15 @@ function startMileStone(mileStone){
   task[0].status = 'inProgress'
 }
   
-function deleteMileStone(mileStone,task){
- const remove = mileStone.subTask.filter(allTask => allTask != task)
-   mileStone.subTask=[]
-   mileStone.subTask[remove]
-  //  updateSelectedTask(mileStone)
+function deleteMileStone(item,index){
 
-// const upDatedTaskList = dataBase.filter( allTask => allTask =! mileStone)
+const a =task[0].subTask.splice(index,1)
+// const upDatedTaskList = dataBase.map( allTask => )
+// const upDatedTaskList = dataBase.filter( allTask => allTask ==! task[0].id)
+updateSelectedTask (a)
 // updateDataBase(upDatedTaskList)
-console.log(mileStone);
-console.log(remove);
-
-// console.log(task);
-// console.log(mileStone);
-
-
+console.log(upDatedTaskList);
+console.log(dataBase);
 
 
 
@@ -110,6 +104,7 @@ console.log(remove);
       </div>
 
       <div className="text-dark pt-[2%] px-2  ">
+
         {task.map((data) => {
           return (
             <div key={data.id}>
@@ -118,7 +113,7 @@ console.log(remove);
               </p>
 
               <div className="mt-[10%] w-full">
-                {data.subTask.map((task) => {
+                {data.subTask.map((task,index) => {
                   return (
                     <div
                       className={`shadow-2xl my-6 border border-gray-200  py-4 rounded-lg lg:mx-4 ${task.id % 2 !== 0 ? "bg-gray-200" : "bg-slate-300"
@@ -137,7 +132,7 @@ console.log(remove);
                             </button>
 
 
-                            <button className=" px-2 text-red-700 flex flex-col" onClick={()=> deleteMileStone(data,task)}>
+                            <button className=" px-2 text-red-700 flex flex-col" onClick={()=> deleteMileStone(index)}>
                               <FontAwesomeIcon icon={faTrashCan} />
                               <span>{"Remove"}</span>
 
