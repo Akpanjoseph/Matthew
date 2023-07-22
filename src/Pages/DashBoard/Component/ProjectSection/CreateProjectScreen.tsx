@@ -13,7 +13,7 @@ const CreateProject = () => {
   
   const [displayModal, setDisplayModal] = useState();
 
-  const userProjects = useStore((store) => store.userProject);
+  const projectDatabases = useStore((store) => store.projectDatabase);
   const showModal = useStore((store) => store.showModal);
   const showCreateProjectButton = useStore((store) => store.showCreateProjectButton);
 
@@ -26,7 +26,7 @@ const CreateProject = () => {
   return (
     <div
       className={`flex flex-col lg:justify-center ${
-        userProjects.length > 0
+        projectDatabases.length > 0
           ? "w-full mt-20"
           : "  lg:items-center w-full mt-20"
       }`}
@@ -64,7 +64,7 @@ const CreateProject = () => {
       {/* </div> */}
 
       <div className="w-full">
-        {userProjects.length === 0 ? (
+        {projectDatabases.length === 0 ? (
           <div className="flex flex-col justify-center items-center mt-20 lg:mt-10">
             <img src={working} alt="" className="w-[70%] lg:w-[40%]" />
             <p>No projects Yet!</p>

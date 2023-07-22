@@ -2,7 +2,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 const store = (set) => ({
-  userProject: [],
+  projectDatabase: [],
   mileStone: [],
   selectedTask: [],
   Modal: false,
@@ -13,8 +13,8 @@ const store = (set) => ({
 
   addProject: (projectName, description) =>
     set((store) => ({
-      userProject: [
-        ...store.userProject,
+      projectDatabase: [
+        ...store.projectDatabase,
         {
           id: Math.floor(Math.random() * 3532) - 10,
           name: projectName,
@@ -37,7 +37,7 @@ const store = (set) => ({
     }),
 
     updateProject :(value) => set({
-      userProject: [value]
+      projectDatabase: [value]
     }) , 
 
     switchShowTask : (value) => set({

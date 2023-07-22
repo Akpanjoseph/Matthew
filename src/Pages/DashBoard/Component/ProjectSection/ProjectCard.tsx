@@ -18,7 +18,7 @@ import { useState } from "react";
 import Task from "./TaskSection/MileStones";
 
 const Projects = () => {
-  const userProject = useStore((store) => store.userProject);
+  const projectDatabase = useStore((store) => store.projectDatabase);
   const taskDetails = useStore((store) => store.addToSelectedtask);
   const display = useStore(store => store.showTaskMenu)
   const setDisplay = useStore(store => store.switchShowTask)
@@ -42,7 +42,7 @@ const Projects = () => {
     <Task/> 
     :
     <div className="text-dark pt-[10%] px-2 grid  grid-cols-1 md:grid-cols-3 ">
-      {userProject.map((data) => {
+      {projectDatabase.map((data) => {
         // const counter =
         return (
           <div

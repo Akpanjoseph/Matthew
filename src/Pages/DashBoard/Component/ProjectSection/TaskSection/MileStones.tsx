@@ -26,7 +26,7 @@ const Task = () => {
     (store) => store.switchCreateProjectButton
   );
 
-  const dataBase = useStore((store) => store.userProject);
+  const dataBase = useStore((store) => store.projectDatabase);
   const updateDataBase = (store) => store.updateProject;
   const updateSelectedTask = (store) => store.updateSelectedTask;
 
