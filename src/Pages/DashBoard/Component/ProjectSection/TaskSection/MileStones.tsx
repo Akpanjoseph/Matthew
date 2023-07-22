@@ -68,7 +68,7 @@ const Task = () => {
   }
 
   return (
-    <div className="">
+    <div className="mx-0">
       
 
       <div className="flex justify-between items-center w-full lg:px-2  flex-col space-y-5 lg:flex-row lg:space-x-2">
@@ -147,7 +147,7 @@ const Task = () => {
 
 
       {/* card */}
-      <div className="text-dark pt-[2%] px-2  ">
+      <div className="text-dark pt-[2%] lg:px-2 px-1 ">
         {task.map((data) => {
           return (
             <div key={data.id}>

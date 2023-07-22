@@ -19,6 +19,7 @@ import Team from "./Team";
 // import { useStore } from "../../Store/store";
 import Tippy from '@tippyjs/react'
 import 'tippy.js/dist/tippy.css'
+import Meeting from "./Component/Meeting";
 
 const DashBoard = () => {
 
@@ -63,26 +64,26 @@ const DashBoard = () => {
 
       {/* main dash board section */}
       <div className="flex w-full h-full lg:space-x-4">
-        <section className="w-[8%] pt-4  rounded-sm  justify-center h-screen border-r-2 border-gray-300 shadow-md  md:flex">
+        <section className="w-[14%] lg:w-[8%] pt-4  rounded-sm  justify-center h-screen border-r-2 border-gray-300 shadow-md  md:flex">
 
           <aside className="w-full flex flex-col text-center pt-20  space-y-8  ">
 
           <Tippy content='Projects' placement="right">
-            <p className={`flex  text-dark p-4  ${active == 1 ? 'border-l-8 border-secondary   shadow-md text-lg  ' : 'shadow-sm'}  hover:text-white hover:bg-secondary hover:rounded-md `} onClick={()=> ( setDisplay(<CreateProject/>), setActive(1))}>
-              <FontAwesomeIcon icon={faPieChart} size="lg" /> 
+            <p className={`flex  text-dark p-2 lg:p-4  ${active == 1 ? 'border-l-8 border-secondary   shadow-md text-lg  ' : 'shadow-sm'}  hover:text-white hover:bg-secondary hover:rounded-md `} onClick={()=> ( setDisplay(<CreateProject/>), setActive(1))}>
+              <FontAwesomeIcon icon={faPieChart}  className="text-md lg:text-xl" /> 
             </p>
           </Tippy>
 
             <Tippy content='Teams' placement="right">
-            <p className={`flex  text-dark p-4  ${active == 2 ? 'border-l-8 border-secondary   shadow-md text-lg  ' : 'shadow-sm'}  hover:text-white hover:bg-secondary hover:rounded-md `} onClick={()=> (setDisplay(<Team/>), setActive(2))}>
-              <FontAwesomeIcon icon={faUserFriends} size="lg" /> 
+            <p className={`flex  text-dark p-2 lg:p-4   ${active == 2 ? 'border-l-8 border-secondary   shadow-md text-lg  ' : 'shadow-sm'}  hover:text-white hover:bg-secondary hover:rounded-md `} onClick={()=> (setDisplay(<Team/>), setActive(2))}>
+              <FontAwesomeIcon icon={faUserFriends} className="text-md lg:text-xl" /> 
             </p>
             </Tippy>
 
 
           <Tippy content='Inbox' placement="right">
-            <p className={`flex  text-dark p-4  ${active == 3 ? 'border-l-8 border-secondary   shadow-md text-lg  ' : 'shadow-sm'}  hover:text-white hover:bg-secondary hover:rounded-md `} onClick={()=> (setDisplay(<Team/>), setActive(3))}>
-              <FontAwesomeIcon icon={faMessage} size="lg" /> 
+            <p className={`flex  text-dark p-2 lg:p-4  ${active == 3 ? 'border-l-8 border-secondary   shadow-md text-lg  ' : 'shadow-sm'}  hover:text-white hover:bg-secondary hover:rounded-md `} onClick={()=> (setDisplay(<Meeting/>), setActive(3))}>
+              <FontAwesomeIcon icon={faMessage} className="text-md lg:text-xl" /> 
             </p>
           </Tippy>
 

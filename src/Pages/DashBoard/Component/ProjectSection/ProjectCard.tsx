@@ -41,7 +41,7 @@ const Projects = () => {
     display ? 
     <Task/> 
     :
-    <div className="text-dark pt-[10%] px-2 grid  grid-cols-1 md:grid-cols-2 ">
+    <div className="text-dark pt-[10%] px-2 grid  grid-cols-1 md:grid-cols-3 ">
       {userProject.map((data) => {
         // const counter =
         return (
