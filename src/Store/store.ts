@@ -3,7 +3,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 const store = (set) => ({
   projectDatabase: [],
-  mileStone: [],
+  teamDatabase:[1],
   selectedTask: [],
   Modal: false,
   showTaskMenu : false,

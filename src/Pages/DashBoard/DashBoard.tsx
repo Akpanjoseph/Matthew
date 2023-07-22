@@ -6,16 +6,17 @@ import {
   faCog,
   faMessage,
   faPieChart,
+  faSignOut,
   faUser,
   faUserFriends,
 } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../assert/logo.png";
 // import Home from "./Component/Home";
-import CreateProject from "./Component/ProjectSection/CreateProjectScreen";
+import CreateProject from "./Component/ProjectSection/ProjectScreen";
 // import Projects from "./Component/ProjectSection/ProjectCard";
 // import Meeting from "./Component/Meeting";
 import Settings from "./Component/Settings";
-import Team from "./Team";
+import Team from "./Component/TeamSection/TeamScreen";
 // import { useStore } from "../../Store/store";
 import Tippy from '@tippyjs/react'
 import 'tippy.js/dist/tippy.css'
@@ -43,19 +44,24 @@ const DashBoard = () => {
 
         {/* account */}
         <div className="hidden md:flex space-x-8 mt-3">
-          <FontAwesomeIcon icon={faBell} size="lg"  />
+          {/* <FontAwesomeIcon icon={faBell} size="lg"  /> */}
 
-          {/* <p className="  bg-secondary flex justify-center p-4 items-center text-white w-[30px] h-[30px] text-xl rounded-full">
+          <p className="  bg-secondary flex justify-center p-4 items-center text-white w-[30px] h-[30px] text-xl rounded-full">
             <span>AJ</span>
-          </p> */}
+          </p>
 
-          <p className="shadow-md" >
+          <p className="flex justify-center items-center space-x-2 border-b-2 ">
+            <span>Log out</span>
+            <FontAwesomeIcon icon={faSignOut} />
+          </p>
+
+          {/* <p className="shadow-md" >
               <FontAwesomeIcon icon={faUser} size="lg" />
-            </p>
+            </p> */}
 
-          <p className=" shadow-md" onClick={()=> setDisplay(<Settings/>)}>
+          {/* <p className=" shadow-md" onClick={()=> setDisplay(<Settings/>)}>
               <FontAwesomeIcon icon={faCog} size="lg" />
-            </p>
+            </p> */}
         </div>
 
 

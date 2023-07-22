@@ -15,7 +15,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faRProject } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
-import Task from "./TaskSection/MileStones";
+import Task from "./milestoneSection/MileStones";
 
 const Projects = () => {
   const projectDatabase = useStore((store) => store.projectDatabase);
@@ -76,9 +76,9 @@ const Projects = () => {
               <p className="">
                 <small>milestone: </small> {data.subTask.length}
               </p>
-              <p>
+              {/* <p>
                 <small>5 days left</small>
-              </p>
+              </p> */}
               <p>
                 <small className="flex space-x-2 items-center">
                   <span className="text-sm text-red-600">Progress:</span>

@@ -35,20 +35,22 @@ const Task = () => {
   function createMileStone(e) {
     e.preventDefault()
 
-    task.map((mileStone) => {
-      mileStone.subTask.push({
-        id: mileStone.subTask.length + 1,
-        task: milestoneName,
-        status: "pending",
+    if (milestoneName.trim().length !== 0){
+      task.map((mileStone) => {
+        mileStone.subTask.push({
+          id: mileStone.subTask.length + 1,
+          task: milestoneName,
+          status: "pending",
+        });
+        addMileStone(mileStone);
       });
-      addMileStone(mileStone);
-    });
-    const upDatedTaskList = dataBase.filter(
-      (allTask) => allTask.id == !task[0].id
-    );
-    updateDataBase(upDatedTaskList);
-    toast.success("created mile stone");
-    setMilestoneName('')
+      const upDatedTaskList = dataBase.filter(
+        (allTask) => allTask.id == !task[0].id
+      );
+      updateDataBase(upDatedTaskList);
+      toast.success("created mile stone");
+      setMilestoneName('')
+    }else toast.error('Milestone can not be empty! ')
   }
 
 
