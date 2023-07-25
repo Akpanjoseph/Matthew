@@ -18,6 +18,8 @@ import { useState } from "react";
 
 const Task = () => {
   const [showModal, setShowModal] = useState(false)
+  const [hour,setHour] = useState(0)
+  const [minute,setMinute] = useState(0)
   const [milestoneName, setMilestoneName] = useState('')
   const task = useStore((store) => store.selectedTask);
   const addMileStone = useStore((store) => store.addToSelectedtask);
@@ -59,8 +61,22 @@ const Task = () => {
   function startMileStone(mileStone) {
     mileStone.status = "inProgress";
     task[0].status = "inProgress";
+    startTimer()
   }
 
+
+  const startTimer=()=>{
+
+    // const addHour = ()
+   setInterval(()=>{
+    setHour(minute + 1);
+    setMinute(hour + 1);
+   },1000)
+
+    console.log(minute,hour);
+    
+    
+  }
 
 
   function deleteMileStone(item, index) {
@@ -71,7 +87,7 @@ const Task = () => {
   }
 
   return (
-    <div className="mx-0">
+    <div className="mx-0 ">
 
 
       <div className="flex justify-evenly items-center w-full lg:px-2  flex-col space-y-5 lg:flex-row lg:space-x-2">
@@ -88,7 +104,7 @@ const Task = () => {
             <input
               type="search"
               placeholder="search task.."
-              className=" outline-none  w-full border-l px-4 py-1 rounded-md  text-sm  "
+              className=" outline-none  w-full border-l px-4 py-2 rounded-md  text-sm  "
             />
             <button className=" flex justify-center item-center bg-dark text-white rounded-r-md px-6 py-3  ">
               <FontAwesomeIcon icon={faSearch} className="text-lg" />
@@ -161,24 +177,21 @@ const Task = () => {
 
 
 
-              <div className="mt-[10%] w-full grid grid-cols-1 md:grid-cols-2  space-x-2">
+              <div className="mt-[10%] w-full grid grid-cols-1 md:grid-cols-3  space-x-2">
                 {data.subTask.map((task, index) => {
                   return (
                     <div
 
-                    className={`shadow-2xl border-s-8 z-50 rounded-md my-3 mx-2   py-4 w-[95%]   ${task.id % 2 !== 0
-                          ? "bg-gray-200 border-dark"
-                          : "bg-slate-300 border-secondary"
-                        }`}
+                    className={`shadow-2xl z-50 rounded-xl my-3 mx-2   py-1 w-[95%]  border`}
                     >
-                      <div className="flex space-y-4 flex-col ">
+                      <div className="flex space-y-4 flex-col py-4 ">
                         <p className="px-4  text-left  text-md lg:text-lg  ">
                           {task.task}
                        
                         </p>
    
 
-                          <div className="flex  justify-around items-center  ">
+                          <div className="flex  justify-around items-center py-2  ">
                             <button
                               className=" px-2 text-green-600 flex flex-col justify-center items-center"
                               onClick={() => startMileStone(task)}
@@ -208,7 +221,7 @@ const Task = () => {
                           <p className="text-center">
                             <small>
                               Time Frame -{" "}
-                              <span className="font-mono">H: 00 M: 30</span>
+                              <span className="font-mono">H: {hour} M: {minute}</span>
                             </small>
                           </p>
                         </div>

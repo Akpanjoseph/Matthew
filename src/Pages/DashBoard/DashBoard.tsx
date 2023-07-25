@@ -30,7 +30,7 @@ const DashBoard = () => {
   
 
   return (
-    <div className="w-full m-0 ">
+    <div className="w-full m-0  bg-slate-100">
       <div className="shadow px-4 flex fixed w-full justify-between bg-dark text-white py-2">
         {/* logo */}
         <div>
@@ -101,7 +101,7 @@ const DashBoard = () => {
 
 
 
-        <section className="w-full lg::w-[70%]  text-dark">
+        <section className="w-full lg::w-[70%]  text-dark ">
          {display}
         </section>
 
