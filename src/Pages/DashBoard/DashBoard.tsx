@@ -2,21 +2,17 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
-  faBell,
-  faCog,
   faMessage,
   faPieChart,
   faSignOut,
-  faUser,
-  faUserFriends,
 } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../assert/logo.png";
 // import Home from "./Component/Home";
 import CreateProject from "./Component/ProjectSection/ProjectScreen";
 // import Projects from "./Component/ProjectSection/ProjectCard";
 // import Meeting from "./Component/Meeting";
-import Settings from "./Component/Settings";
-import Team from "./Component/TeamSection/TeamScreen";
+// import Settings from "./Component/Settings";
+// import Team from "./Component/TeamSection/TeamScreen";
 // import { useStore } from "../../Store/store";
 import Tippy from '@tippyjs/react'
 import 'tippy.js/dist/tippy.css'
