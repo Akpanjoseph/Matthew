@@ -49,7 +49,7 @@ const CreateProjectModal = () => {
       
       <Modal
         isOpen={showModal}
-        className={'lg:w-[40%] w-[90%]  bg-white shadow-md  '}
+        className={'lg:w-[40%] w-[90%] border  bg-white shadow-2xl  '}
         contentLabel={"Create Project"}
         onRequestClose={() => toast.warning("Click on the close button to close modal")}
         style={{
@@ -58,10 +58,10 @@ const CreateProjectModal = () => {
            margin:'5rem auto ',
            padding:'20px ',
             borderRadius: 20,
-            borderBottom: "#936eff 4px solid",
-            borderTop: "#936eff 4px solid",
+            borderBottom: "#fff 4px solid",
+            // borderTop: "#936eff 4px solid",
             backgroundColor:"white",
-            // top:'20px'
+            top:'20px',
             position:'relative'
 
           },
@@ -79,7 +79,7 @@ const CreateProjectModal = () => {
             {" "}
             <FontAwesomeIcon
               icon={faClose}
-              size="lg"
+              className="text-md lg:text-lg"
               className="bg-red-700 text-white px-4 py-2"
             />
           </button>

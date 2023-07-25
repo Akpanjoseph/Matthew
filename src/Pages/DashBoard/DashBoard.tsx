@@ -46,7 +46,7 @@ const DashBoard = () => {
         <div className="hidden md:flex space-x-8 mt-3">
           {/* <FontAwesomeIcon icon={faBell} size="lg"  /> */}
 
-          <p className="  bg-secondary flex justify-center p-4 items-center text-white w-[30px] h-[30px] text-xl rounded-full">
+          <p className="  bg-secondary flex justify-center p-4 items-center text-white w-[40px] h-[40px] text-xl rounded-full">
             <span>AJ</span>
           </p>
 
@@ -80,11 +80,11 @@ const DashBoard = () => {
             </p>
           </Tippy>
 
-            <Tippy content='Teams' placement="right">
+            {/* <Tippy content='Teams' placement="right">
             <p className={`flex  text-dark p-2 lg:p-4   ${active == 2 ? 'border-l-8 border-secondary   shadow-md text-lg  ' : 'shadow-sm'}  hover:text-white hover:bg-secondary hover:rounded-md `} onClick={()=> (setDisplay(<Team/>), setActive(2))}>
               <FontAwesomeIcon icon={faUserFriends} className="text-md lg:text-xl" /> 
             </p>
-            </Tippy>
+            </Tippy> */}
 
 
           <Tippy content='Inbox' placement="right">
