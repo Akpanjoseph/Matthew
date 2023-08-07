@@ -1,57 +1,56 @@
-import { Link } from 'react-router-dom'
-
-import logo from '../../../assert/logo.png';
-// import chart1 from '../../../assert/Analytics-amico.svg';
-import chart1 from '../../../assert/chart1.png';
-import chart2 from '../../../assert/chart2.png';
-// import teamSpirit from '../../../assert/Team spirit.gif'
-
-
-
-
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
     return (
-
-        <header className=' bg-primary w-full text-[#dcd4d4] py-4'>
-           
-
-
-
-
+        <header className=" bg-[#090909] w-full text-white pt-5 pb-4 px-4">
             {/* caption */}
-            <section >
-                <div className='header-main '>
 
-                    {/* text caption */}
-                    <div className='w-full lg:w-[60%] text-center mb-8 lg:mb-0 lg:text-left'>
-                        <h1 className='text-3xl lg:text-5xl capitalize'>Taking your productivity to maximum</h1>
-                        <p className='text-md lg:text-2xl'>Focus more on creativity ,let's handle productivity  </p>
-                    </div>
 
-                    {/* productivity image */}
-                    <div className='flex w-full justify-center items-center space-x-4 lg:w-[40%]  flex-row'>
-                        <img src={chart1} alt="" className='w-[40%] lg:w-[50%]' />
-                        <img src={chart2} alt="" className='w-[40%] lg:w-[50%]' />
 
+
+            <div className=" w-full pt-16 flex flex-col lg:flex-row justify-between items-center space-y-6">
+
+                {/* <div >
+                    <img src="bg-gradient.svg" alt="" width={'30%'} className="absolute top-10 left-[20%]  " />
+                </div> */}
+
+                {/* text caption */}
+                <div className="lg:w-[40%] w-full  box-content tracking-wide leading-relaxed text-left">
+                    <h1 className="text-2xl  capitalize text-[#936EFF] font-extrabold ">
+                        Taking Your Productivity To Maximum
+                    </h1>
+                    <p className=" py-2 text-xl lg:w-[80%]">
+                        Focus more on creativity...let's handle productivity
+                    </p>
+                    <div className="mt-20 hidden lg:block ">
+                        <Link to={"/login"} className=" bg-secondary w-full py-4 text-md  rounded-md font-bold hover:bg-white hover:text-dark lg:py-2  ">
+                            <button className="w-full lg:w-[80%]">
+                                Get Started
+                            </button>
+                        </Link>
                     </div>
                 </div>
 
-                {/* get started button */}
-                <div className='mt-20 text-center'>
-                    <Link to={'/login'}>
-                        <button className=' bg-secondary w-[90%] py-2 text-md  rounded-md font-bold hover:bg-white hover:text-dark lg:w-[40%] lg:py-2 lg:text-2xl '>Get Started  </button>
-                    </Link>
 
+
+                {/* productivity image */}
+                <div className="md:w-[45%] box-content">
+                    <img src={'track-productivity.png'} alt="" />
+                    <p className="text-center">Productivity</p>
                 </div>
-            </section>
+            </div>
 
-
-
+            {/* get started button */}
+           < div className="mt-10  lg:hidden ">
+                        <Link to={"/login"}>
+                            <button className=" bg-secondary w-full py-2 text-md  rounded-md font-bold hover:bg-white hover:text-dark lg:py-2   ">
+                                Get Started
+                            </button>
+                        </Link>
+                    </div>
         </header>
+    );
+};
 
-    )
-}
-
-export default Header
+export default Header;
