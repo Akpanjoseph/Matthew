@@ -7,8 +7,7 @@ import chart2 from '../../../assert/chart2.png';
 // import teamSpirit from '../../../assert/Team spirit.gif'
 
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+
 
 
 
@@ -16,38 +15,7 @@ const Header = () => {
     return (
 
         <header className=' bg-primary w-full text-[#dcd4d4] py-4'>
-            <section className='nav-head'>
-                {/* logo */}
-                <div>
-                    <img src={logo} alt="" className='w-[200px]' />
-                </div>
-
-                {/* links */}
-                <div className=' hidden  flex-row space-x-10 text-lg pt-10 lg:flex'>
-                    <p className='hover:border-b-2 border-white'>Home</p>
-                    <p className='hover:border-b-2 border-white '>Docs</p>
-
-
-                </div>
-
-                {/* account */}
-                <div className='hidden pt-10 text-md lg:block'>
-                    <Link to={'/login'}>
-                        <button className='px-4 hover:border-b-2 border-white'>Log In</button>
-                    </Link>
-
-                    <Link to={'/signup'}>
-                        <button className='mx-2 px-8 py-1 rounded-md  bg-secondary  hover:bg-white hover:text-black'>Sign Up</button>
-                    </Link>
-                </div>
-
-
-                {/* mobile menu */}
-                <div className='lg:hidden'>
-                    <FontAwesomeIcon icon={faBars} size="2xl" />
-                </div>
-            </section>
-
+           
 
 
 

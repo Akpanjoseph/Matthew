@@ -235,7 +235,7 @@ const Task = () => {
                             >
                               <FontAwesomeIcon
                                 className="text-md lg:text-2xl"
-                                icon={playing ?  faPauseCircle :faPlayCircle  }
+                                icon={playing ?  faPlayCircle :faStop   }
                               />
                               {/* <span>{"Start"}</span> */}
                             </button>

@@ -79,8 +79,7 @@ const CreateProjectModal = () => {
             {" "}
             <FontAwesomeIcon
               icon={faClose}
-              className="text-md lg:text-lg"
-              className="bg-red-700 text-white px-4 py-2"
+              className="text-md lg:text-lg bg-red-700 text-white px-4 py-2"
             />
           </button>
           </Tippy>
