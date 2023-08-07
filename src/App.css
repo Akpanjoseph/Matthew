@@ -4,9 +4,9 @@
     url("./font/Vollkorn-Regular.ttf") format("truetype");
 }
 
-body {
+/* body {
   font-family: "vollkorn-regular";
-}
+} */
 
 .title {
   @apply capitalize  text-center w-[95%] text-3xl font-semibold lg:w-[60%] lg:text-4xl;
@@ -16,18 +16,18 @@ body {
   @apply my-20 lg:mt-40 lg:px-4;
 }
 
-.title {
-  @apply capitalize  text-center w-[95%] text-3xl font-semibold lg:w-[60%] lg:text-4xl;
-}
+/* .title {
+  @apply ;
+} */
 
 .nav-head {
   @apply flex flex-row  justify-between w-full items-center px-4;
 }
 
-.header-main {
-  @apply mt-20 lg:mt-36  flex flex-col  w-full justify-center items-center lg:px-8 lg:flex-row;
-}
+/* .header-main {
+  @apply 
+} */
 
 .head-container {
-  @apply flex flex-col justify-center items-center;
+  @apply flex flex-col justify-center items-center ;
 }

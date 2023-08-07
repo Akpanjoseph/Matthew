@@ -12,7 +12,7 @@ const NavBar = () => {
     // const navigate =  Navigate()
 
     return (
-        <section className=' w-full bg-[#090909] text-white px-4 ' >
+        <section className=' w-full bg-[#090909] text-white px-4 shadow-md ' >
             {/* logo */}
 
 
@@ -25,7 +25,7 @@ const NavBar = () => {
                 </div>
 
 
-                <div className=" absolute top-[10%] left-[35%] px-5 space-x-4 pb-4 text-center border-b-4 border-[#936EFF] text-[16px] leading-4 tracking-[0.2px]  ">
+                <div className="hidden lg:block absolute top-[10%] left-[35%] px-5 space-x-4 pb-4 text-center border-b-4 border-[#936EFF] text-[16px] leading-4 tracking-[0.2px]  ">
                     <Link to={'/'} className='px-4 hover:border-b-2 border-white' > Home</Link>
 
                     <Link to={'/login'} className='px-4 hover:border-b-2 border-white' >Docs</Link>
